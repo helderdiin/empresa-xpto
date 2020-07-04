@@ -2,7 +2,7 @@
 
 Implementar uma aplicação para gerenciar os produtos da empresa XPTO.
 
-## Commits em inglês ou português? :thinking_face:
+## Commits em inglês ou português? :thinking:
 
 É sempre uma pergunta pertinente. O que eu acredito é em *seguir padrões*, mais importante do que o certo e o errado (que nem sempre existe) o mais importante é que um padrão seja definido (seja sozinho, quando estiver solo, ou em time, quando tiverem em party) e seguido.
 
