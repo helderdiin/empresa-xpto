@@ -17,4 +17,10 @@ yarn install
 yarn start
 ```
 
+## Playlists de desenvolvimento :musical_note:
+
+1. [Easy](https://open.spotify.com/playlist/5iSqs9BD6ivQEfA4mU839z?si=iICXv-VZT56HntcPHubHfQ)
+2. [LIU - MIX VERÃO INFINITO](https://youtu.be/-irwPju_STY)
+3. [Imagine Dragons Best Of](https://open.spotify.com/playlist/43mnKzy2LaOV1q6LhsJERY?si=xR_MvpQLQV6ZU0rti3jGDQ)
+
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
