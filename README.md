@@ -2,6 +2,12 @@
 
 Implementar uma aplicação para gerenciar os produtos da empresa XPTO.
 
+## Commits em inglês ou português? :thinking_face:
+
+É sempre uma pergunta pertinente. O que eu acredito é em *seguir padrões*, mais importante do que o certo e o errado (que nem sempre existe) o mais importante é que um padrão seja definido (seja sozinho, quando estiver solo, ou em time, quando tiverem em party) e seguido.
+
+É mais comum vermos projetos com commits em inglês, mas acho que isso se deve ao fato de um possível apoio internacional, que não é o meu caso. Logo estou fazendo os commits em português por ser nossa língua nativa.
+
 ## Executando o projeto localmente (dev)
 
 Costumo apenas utilizar `yarn` como **package manager**, por isso só versionei o `yarn.lock`, indico o uso do mesmo para evitarmos versões diferentes.
