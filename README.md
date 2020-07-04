@@ -2,6 +2,29 @@
 
 Implementar uma aplicação para gerenciar os produtos da empresa XPTO.
 
+## Observações :green_book:
+
+### Ícones do menu
+
+No menu, ao invés de importar 2 png's para cada item do menu (normal e ativado), decidi resolver desta forma:
+
+``` css
+.aside-menu__item {
+  ...
+  opacity: 0.7;
+}
+
+.aside-menu__item.active {
+  opacity: 1;
+}
+
+.aside-menu__item.active span {
+  font-weight: 700;
+}
+```
+
+Assim fica com um efeito visual semelhante, com menos complexidade e sem o uso de JS na jogada.
+
 ## Commits em inglês ou português? :thinking:
 
 É sempre uma pergunta pertinente. O que eu acredito é em *seguir padrões*, mais importante do que o certo e o errado (que nem sempre existe) o mais importante é que um padrão seja definido (seja sozinho, quando estiver solo, ou em time, quando tiverem em party) e seguido.
