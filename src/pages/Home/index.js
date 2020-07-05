@@ -21,8 +21,8 @@ function Home() {
   return (
     <div className="home">
       {products.map((product) => (
-        <Link to={`/product/${product.id}`}>
-          <ProductCard key={product.id} product={product} />
+        <Link key={product.id} to={`/product/${product.id}`}>
+          <ProductCard product={product} />
         </Link>
       ))}
     </div>
