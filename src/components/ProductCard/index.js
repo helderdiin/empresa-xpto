@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './styles.css';
 
@@ -40,5 +41,16 @@ function ProductCard({ product }) {
     </div>
   );
 }
+
+ProductCard.propTypes = {
+  product: PropTypes.shape({
+    imagem: PropTypes.string,
+    exclusivo: PropTypes.bool,
+    promocao: PropTypes.bool,
+    valor: PropTypes.number,
+    nome: PropTypes.string,
+    decricaoCurta: PropTypes.string,
+  }).isRequired,
+};
 
 export default ProductCard;
