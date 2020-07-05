@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Exclusive from './pages/Exclusive';
 import Promotion from './pages/Promotion';
 import Favorite from './pages/Favorite';
+import Product from './pages/Product';
 
 export default function Routes() {
   return (
@@ -14,6 +15,7 @@ export default function Routes() {
         <Route path="/exclusive" component={Exclusive} />
         <Route path="/promotion" component={Promotion} />
         <Route path="/favorite" component={Favorite} />
+        <Route path="/product/:productId" component={Product} />
       </Switch>
     </BrowserRouter>
   );

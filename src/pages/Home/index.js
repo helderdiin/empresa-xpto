@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -20,7 +21,9 @@ function Home() {
   return (
     <div className="home">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <Link to={`/product/${product.id}`}>
+          <ProductCard key={product.id} product={product} />
+        </Link>
       ))}
     </div>
   );
