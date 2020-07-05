@@ -1,50 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './styles.css';
 
-import Switch from '../../components/Switch';
+import api from '../../services/api';
+import ProductCard from '../../components/ProductCard';
 
 function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const { data } = await api.get('/5d3b57023000005500a2a0a6');
+      setProducts(data.produtos);
+    };
+
+    getProducts();
+  }, []);
+
   return (
     <div className="home">
-      <div className="product-card">
-        <div className="product-card__img" style={{ backgroundImage: 'url(https://i.imgur.com/ZwIhQDO.jpg)' }}>
-          <div className="product-card__status product-card__status--promotion">Promoção</div>
-        </div>
-
-        <div className="product-card__info">
-          <div className="product-card__price-favorite">
-            <div className="product-card__price">198</div>
-            <div className="product-card__favorite">
-              <Switch checked />
-              <span className="product-card__switch-text">tornar favorito</span>
-            </div>
-          </div>
-          <div className="product-card__name-description">
-            <div className="product-card__name">Fone Bluetooth XPTO</div>
-            <div className="product-card__description">Aparelho intra auricular de som em alta definição sem fio para os viciados de plantão</div>
-          </div>
-        </div>
-      </div>
-      <div className="product-card">
-        <div className="product-card__img" style={{ backgroundImage: 'url(https://i.imgur.com/jl3mWPw.jpg)' }}>
-          <div className="product-card__status product-card__status--exclusive">Exclusivo</div>
-        </div>
-
-        <div className="product-card__info">
-          <div className="product-card__price-favorite">
-            <div className="product-card__price">19.9</div>
-            <div className="product-card__favorite">
-              <Switch />
-              <span className="product-card__switch-text">tornar favorito</span>
-            </div>
-          </div>
-          <div className="product-card__name-description">
-            <div className="product-card__name">Guarda-Chuva XPTO</div>
-            <div className="product-card__description">Abertura e fechamentos automáticos da copa, estrutura em fibra</div>
-          </div>
-        </div>
-      </div>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
     </div>
   );
 }
