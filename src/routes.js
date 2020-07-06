@@ -7,16 +7,27 @@ import Promotion from './pages/Promotion';
 import Favorite from './pages/Favorite';
 import Product from './pages/Product';
 
+import Menu from './components/Menu';
+import Header from './components/Header';
+
 export default function Routes() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/exclusive" component={Exclusive} />
-        <Route path="/promotion" component={Promotion} />
-        <Route path="/favorite" component={Favorite} />
-        <Route path="/product/:productId" component={Product} />
-      </Switch>
+      <Menu />
+
+      <div id="app">
+        <Header />
+
+        <main>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/exclusive" component={Exclusive} />
+            <Route path="/promotion" component={Promotion} />
+            <Route path="/favorite" component={Favorite} />
+            <Route path="/product/:productId" component={Product} />
+          </Switch>
+        </main>
+      </div>
     </BrowserRouter>
   );
 }

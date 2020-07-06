@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './styles.css';
 
@@ -9,41 +10,51 @@ import promotionImg from '../../assets/promotion.png';
 import favoritesImg from '../../assets/favorites.png';
 import finchLogoImg from '../../assets/finch-logo.png';
 
-function Home() {
+function Menu() {
   return (
     <aside className="aside-menu">
       <div className="aside-menu__item" style={{ opacity: 1 }}>
-        <img src={logoImg} alt="Logo" />
-        <span />
+        <NavLink to="/">
+          <img src={logoImg} alt="Logo" />
+          <span />
+        </NavLink>
       </div>
 
       <div className="aside-menu__divider" />
 
-      <div className="aside-menu__item">
-        <img src={productsImg} alt="Produtos" />
-        <span>Todos</span>
-      </div>
+      <NavLink to="/" exact activeClassName="active">
+        <div className="aside-menu__item">
+          <img src={productsImg} alt="Produtos" />
+          <span>Todos</span>
+        </div>
+      </NavLink>
 
       <div className="aside-menu__divider" />
 
-      <div className="aside-menu__item">
-        <img src={exclusivesImg} alt="Exclusivos" />
-        <span>Exclusivos</span>
-      </div>
+      <NavLink to="/exclusive" activeClassName="active">
+        <div className="aside-menu__item">
+          <img src={exclusivesImg} alt="Exclusivos" />
+          <span>Exclusivos</span>
+        </div>
+      </NavLink>
 
       <div className="aside-menu__divider" />
 
-      <div className="aside-menu__item">
-        <img src={promotionImg} alt="Promoção" />
-        <span>Promoção</span>
-      </div>
+      <NavLink to="/promotion" activeClassName="active">
+        <div className="aside-menu__item">
+          <img src={promotionImg} alt="Promoção" />
+          <span>Promoção</span>
+        </div>
+      </NavLink>
 
       <div className="aside-menu__divider" />
 
-      <div className="aside-menu__item">
-        <img src={favoritesImg} alt="Favoritos" />
-        <span>Favoritos</span>
-      </div>
+      <NavLink to="/favorite" activeClassName="active">
+        <div className="aside-menu__item">
+          <img src={favoritesImg} alt="Favoritos" />
+          <span>Favoritos</span>
+        </div>
+      </NavLink>
 
       <div className="aside-menu__finch-logo">
         <a href="http://www.finchsolucoes.com.br/" target="_blank" rel="noopener noreferrer">
@@ -54,4 +65,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Menu;

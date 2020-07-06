@@ -23,12 +23,13 @@
   opacity: 0.7;
 }
 
-.aside-menu__item.active {
+.aside-menu a.active .aside-menu__item {
   opacity: 1;
 }
 
-.aside-menu__item.active span {
+.aside-menu a.active .aside-menu__item span {
   font-weight: 700;
+  color: #000;
 }
 
 .aside-menu__item img {
@@ -37,6 +38,7 @@
 
 .aside-menu__item span {
   font-size: 16px;
+  color: #7D7D7D;
 }
 
 .aside-menu__divider {
