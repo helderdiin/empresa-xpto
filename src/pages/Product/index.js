@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './styles.css';
 
-import api from '../../services/api';
 import ProductImg from '../../components/ProductImg';
 
 function Product() {
   const { productId } = useParams();
-
-  const [product, setProduct] = useState({ fichaTecnica: [] });
-
-  useEffect(() => {
-    const getProducts = async () => {
-      const { data } = await api.get('/5d3b57023000005500a2a0a6');
-      setProduct(data.produtos.find(({ id }) => id === +productId));
-    };
-
-    getProducts();
-  }, []);
+  const product = useSelector((state) => state.products.find(({ id }) => id === +productId));
 
   return (
     <div className="product">
