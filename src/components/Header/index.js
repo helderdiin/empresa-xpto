@@ -9,7 +9,7 @@ import Switch from '../Switch';
 import { currency } from '../../services/format';
 import { PAGE_NAMES } from '../../constants';
 
-function Header({ page, product }) {
+function Header({ page, product, onSearch }) {
   const history = useHistory();
   const match = useRouteMatch({
     path: '/product/:productId',
@@ -92,6 +92,10 @@ function Header({ page, product }) {
     }
   };
 
+  const handlerChangeSearch = (e) => {
+    onSearch(e.target.value);
+  };
+
   return (
     <header className="header">
       <div className="header__description">
@@ -110,7 +114,7 @@ function Header({ page, product }) {
           )
           : ''}
         <div className="header__input">
-          <input placeholder="Buscar" />
+          <input placeholder="Buscar" onChange={handlerChangeSearch} />
           <span className="header__icon">
             <FaSearch />
             <div />
@@ -130,11 +134,13 @@ Header.propTypes = {
     decricaoCurta: PropTypes.string,
     favorite: PropTypes.bool,
   }),
+  onSearch: PropTypes.func,
 };
 
 Header.defaultProps = {
   page: PAGE_NAMES.ALL,
   product: null,
+  onSearch: () => {},
 };
 
 export default Header;
