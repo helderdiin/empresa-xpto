@@ -18,7 +18,7 @@ function ProductCard({ product }) {
         <div className="product-card__price-favorite">
           <div className="product-card__price">{currency(product.valor)}</div>
           <div className="product-card__favorite">
-            <Switch checked />
+            <Switch id={product.id} checked={product.favorite} />
             <span className="product-card__switch-text">tornar favorito</span>
           </div>
         </div>
@@ -33,12 +33,14 @@ function ProductCard({ product }) {
 
 ProductCard.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.number,
     imagem: PropTypes.string,
     exclusivo: PropTypes.bool,
     promocao: PropTypes.bool,
     valor: PropTypes.number,
     nome: PropTypes.string,
     decricaoCurta: PropTypes.string,
+    favorite: PropTypes.bool,
   }).isRequired,
 };
 

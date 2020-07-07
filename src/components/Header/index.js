@@ -26,7 +26,7 @@ function Header({ page, product }) {
             {currency(product.valor)}
           </div>
           <div className="header__title-favorite">
-            <Switch />
+            <Switch id={product.id} checked={product.favorite} />
             <span className="header__switch-text">tornar favorito</span>
           </div>
         </div>
@@ -124,9 +124,11 @@ function Header({ page, product }) {
 Header.propTypes = {
   page: PropTypes.string,
   product: PropTypes.shape({
+    id: PropTypes.number,
     valor: PropTypes.number,
     nome: PropTypes.string,
     decricaoCurta: PropTypes.string,
+    favorite: PropTypes.bool,
   }),
 };
 

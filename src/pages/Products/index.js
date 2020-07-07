@@ -25,7 +25,7 @@ function Products() {
 
     if (location.pathname === '/favorite') {
       currentPage = PAGE_NAMES.FAVORITE;
-      return state.products.filter((p) => p.favorito);
+      return state.products.filter((p) => p.favorite);
     }
 
     return state.products;
