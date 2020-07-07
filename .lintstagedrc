@@ -1,1 +1,1 @@
-{'**/src/**/*.{js}': ['eslint --fix'], '**/src/**/*.{css}': ['stylelint --fix']}
+{'**/src/**/*.js': ['eslint --fix'], '**/src/**/*.css': ['stylelint --fix']}
