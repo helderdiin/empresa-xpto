@@ -12,6 +12,8 @@
   font-size: 20px;
   color: #282430;
   margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .header__title span {
@@ -24,13 +26,54 @@
   height: 20px;
 }
 
-.header__search {
-  position: relative;
-  width: 445px;
-  height: 48px;
+.header__title-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5E3BA5;
+  margin: 0 10px;
 }
 
-.header__search input {
+.header__title-favorite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__switch-text {
+  font-size: 12px;
+  color: #8E879E;
+}
+
+.header__search {
+  width: 445px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__back-button {
+  margin-right: 25px;
+  padding: 0 25px;
+  color: #C0C4CC;
+  border-right: 1px solid #ccc;
+  line-height: 0px;
+}
+
+.header__back-button svg {
+  height: 100%;
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.header__input {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.header__input input {
   width: 100%;
   height: 100%;
   box-shadow: 0px 3px 6px #2959B729;
@@ -55,7 +98,6 @@
   height: 100%;
   width: 24px;
   text-align: center;
-  line-height: 48px;
 }
 
 .header__icon div {
