@@ -1,5 +1,5 @@
-.home {
-  margin-top: 71px;
+.products {
+  padding-top: 71px;
   display: grid;
   grid-gap: 55px;
   grid-template-columns: repeat(auto-fill, 362px);

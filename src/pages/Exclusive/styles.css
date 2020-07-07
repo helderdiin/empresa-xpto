@@ -1,8 +1,0 @@
-.exclusive {
-  margin-top: 71px;
-  display: grid;
-  grid-gap: 55px;
-  grid-template-columns: repeat(auto-fill, 362px);
-  justify-content: space-between;
-  padding-bottom: 50px;
-}

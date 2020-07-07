@@ -37,7 +37,7 @@ a {
   padding: 73px 57px 50px;
 }
 
-#app main {
+#app .page-container {
   width: 100%;
   margin-top: 51px;
   border-top: 1px solid #ccc;

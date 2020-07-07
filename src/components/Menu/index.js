@@ -14,7 +14,7 @@ function Menu() {
   return (
     <aside className="aside-menu">
       <div className="aside-menu__item" style={{ opacity: 1 }}>
-        <NavLink to="/">
+        <NavLink to="/" activeClassName="active">
           <img src={logoImg} alt="Logo" />
           <span />
         </NavLink>

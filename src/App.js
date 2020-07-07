@@ -8,7 +8,6 @@ import Routes from './routes';
 import store from './store';
 
 import Menu from './components/Menu';
-import Header from './components/Header';
 
 function App() {
   return (
@@ -17,8 +16,6 @@ function App() {
         <Menu />
 
         <div id="app">
-          <Header />
-
           <main>
             <Routes />
           </main>
