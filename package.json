@@ -56,13 +56,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "**/src/**/*.{js}": [
-      "yarn lint:fix"
-    ],
-    "**/src/**/*.{css}": [
-      "yarn stylelint:fix"
-    ]
   }
 }

@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import './styles.css';
 import { Creators as ProductActions } from '../../store/ducks/products';
 
-function Switch({ id, checked }) {
+function Switch ({ id, checked }) {
   const dispatch = useDispatch();
 
   const handlerSwitchChange = () => {
