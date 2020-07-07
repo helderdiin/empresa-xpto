@@ -19,7 +19,6 @@ function ProductCard({ product }) {
           <div className="product-card__price">{currency(product.valor)}</div>
           <div className="product-card__favorite">
             <Switch id={product.id} checked={product.favorite} />
-            <span className="product-card__switch-text">tornar favorito</span>
           </div>
         </div>
         <div className="product-card__name-description">

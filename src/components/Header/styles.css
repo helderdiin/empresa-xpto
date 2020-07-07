@@ -16,7 +16,7 @@
   flex-wrap: wrap;
 }
 
-.header__title span {
+.header__title>span {
   font-weight: 600;
 }
 
@@ -37,11 +37,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.header__switch-text {
-  font-size: 12px;
-  color: #8E879E;
 }
 
 .header__search {
@@ -140,7 +135,7 @@
 }
 
 .header__search-history ul li:hover {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .header__input input:focus~.header__search-history,

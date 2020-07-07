@@ -31,7 +31,6 @@ function Header({ page, product, onSearch }) {
           </div>
           <div className="header__title-favorite">
             <Switch id={product.id} checked={product.favorite} />
-            <span className="header__switch-text">tornar favorito</span>
           </div>
         </div>
       );
