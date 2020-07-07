@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaSearch, FaArrowLeft } from 'react-icons/fa';
 import { useRouteMatch, useHistory } from 'react-router-dom';
+import createPersistedState from 'use-persisted-state';
 
 import './styles.css';
 
@@ -9,7 +10,10 @@ import Switch from '../Switch';
 import { currency } from '../../services/format';
 import { PAGE_NAMES } from '../../constants';
 
+const useSearchHistory = createPersistedState('@empresa-xpto/search-history');
+
 function Header({ page, product, onSearch }) {
+  const [searchHistory, setSearchHistory] = useSearchHistory([]);
   const history = useHistory();
   const match = useRouteMatch({
     path: '/product/:productId',
@@ -92,8 +96,17 @@ function Header({ page, product, onSearch }) {
     }
   };
 
-  const handlerChangeSearch = (e) => {
-    onSearch(e.target.value);
+  const handlerKeyPressSearch = (e) => {
+    if (e.which === 13 || e.keyCode === 13) {
+      const element = e.target;
+      onSearch(element.value);
+
+      if (searchHistory.indexOf(element.value.toLowerCase()) === -1) {
+        setSearchHistory([...searchHistory, element.value.toLowerCase()]);
+      }
+
+      element.blur();
+    }
   };
 
   return (
@@ -114,11 +127,23 @@ function Header({ page, product, onSearch }) {
           )
           : ''}
         <div className="header__input">
-          <input placeholder="Buscar" onChange={handlerChangeSearch} />
+          <input placeholder="Buscar" onKeyPress={handlerKeyPressSearch} />
           <span className="header__icon">
             <FaSearch />
             <div />
           </span>
+          {searchHistory.length
+            ? (
+              <div className="header__search-history">
+                <ul>
+                  {searchHistory.map((h, i) => (
+                    // eslint-disable-next-line
+                    <li key={i}  onClick={() => { onSearch(h) }}><span>{h}</span></li>
+                  ))}
+                </ul>
+              </div>
+            )
+            : ''}
         </div>
       </div>
     </header>
