@@ -8,7 +8,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint --fix src/**/*.js"
+    "lint:fix": "eslint --fix src/**/*.js",
+    "stylelint": "stylelint src/**/*.css",
+    "stylelint:fix": "stylelint --fix src/**/*.css"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -34,7 +36,9 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.5",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.11"
+    "lint-staged": "^10.2.11",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0"
   },
   "browserslist": {
     "production": [
@@ -56,6 +60,10 @@
   "lint-staged": {
     "./src/*.{js}": [
       "yarn lint:fix",
+      "git add"
+    ],
+    "./src/*.{css}": [
+      "yarn stylelint:fix",
       "git add"
     ]
   }

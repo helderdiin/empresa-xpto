@@ -2,7 +2,7 @@
   min-height: 339px;
   height: 100%;
   border-radius: 3px;
-  box-shadow: 0px 10px 20px #16319B29;
+  box-shadow: 0 10px 20px #16319b29;
   background: #fff;
 }
 
@@ -29,7 +29,7 @@
 .product-card__price {
   font-size: 20px;
   font-weight: 600;
-  color: #5E3BA5;
+  color: #5e3ba5;
 }
 
 .product-card__name-description {
@@ -47,6 +47,6 @@
 }
 
 .product-card__description {
-  color: #8E879E;
+  color: #8e879e;
   line-height: 1.5em;
 }

@@ -20,9 +20,9 @@
 }
 
 .product-img .product-img__status--promotion {
-  background: transparent linear-gradient(125deg, #EF0E5A 0%, #55118F 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(125deg, #ef0e5a 0%, #55118f 100%) 0% 0% no-repeat padding-box;
 }
 
 .product-img .product-img__status--exclusive {
-  background: transparent linear-gradient(125deg, #1DB6CE 0%, #182AC9 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(125deg, #1db6ce 0%, #182ac9 100%) 0% 0% no-repeat padding-box;
 }
