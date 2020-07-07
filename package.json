@@ -58,13 +58,11 @@
     }
   },
   "lint-staged": {
-    "./src/**/*.{js}": [
-      "yarn lint:fix",
-      "git add"
+    "**/src/**/*.{js}": [
+      "yarn lint:fix"
     ],
-    "./src/**/*.{css}": [
-      "yarn stylelint:fix",
-      "git add"
+    "**/src/**/*.{css}": [
+      "yarn stylelint:fix"
     ]
   }
 }
