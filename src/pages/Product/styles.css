@@ -3,19 +3,17 @@
 }
 
 .product__img-details {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .product__img {
-  width: 362px;
+  max-width: 362px;
   height: 358px;
+  width: 100%;
   margin-right: 45px;
-}
-
-.product__details {
-  flex: 1;
+  margin-bottom: 20px;
+  float: left;
 }
 
 .product__title {
@@ -31,7 +29,7 @@
 }
 
 .product__props {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .product__props-title {

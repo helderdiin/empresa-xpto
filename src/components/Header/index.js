@@ -36,15 +36,6 @@ function Header({ page, product, onSearch }) {
       );
     }
 
-    if (page === PAGE_NAMES.ALL) {
-      return (
-        <div className="header__title">
-          <span>Empresa XPTO </span>
-          &nbsp;- Conheça todos os nossos produtos
-        </div>
-      );
-    }
-
     if (page === PAGE_NAMES.EXCLUSIVE) {
       return (
         <div className="header__title">
@@ -71,28 +62,33 @@ function Header({ page, product, onSearch }) {
         </div>
       );
     }
+
+    return (
+      <div className="header__title">
+        <span>Empresa XPTO </span>
+        &nbsp;- Conheça todos os nossos produtos
+      </div>
+    );
   };
 
   const getHeaderSubtitleElement = () => {
     if (product) {
-      return <span>{product.decricaoCurta}</span>;
-    }
-
-    if (page === PAGE_NAMES.ALL) {
-      return <span>Listagem de produtos - clique no produto desejado para saber mais</span>;
+      return product.decricaoCurta;
     }
 
     if (page === PAGE_NAMES.EXCLUSIVE) {
-      return <span>Listagem de produtos exclusivos - clique no produto desejado para saber mais</span>;
+      return 'Listagem de produtos exclusivos - clique no produto desejado para saber mais';
     }
 
     if (page === PAGE_NAMES.PROMOTION) {
-      return <span>Listagem de produtos em promoção - clique no produto desejado para saber mais</span>;
+      return 'Listagem de produtos em promoção - clique no produto desejado para saber mais';
     }
 
     if (page === PAGE_NAMES.FAVORITE) {
-      return <span>Listagem de produtos marcados como favoritos - clique no produto desejado para saber mais</span>;
+      return 'Listagem de produtos marcados como favoritos - clique no produto desejado para saber mais';
     }
+
+    return 'Listagem de produtos - clique no produto desejado para saber mais';
   };
 
   const handlerKeyPressSearch = (e) => {

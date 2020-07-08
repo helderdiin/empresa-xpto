@@ -3,7 +3,6 @@
   width: 130px;
   background: #fff;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -49,4 +48,36 @@
 .aside-menu__finch-logo {
   position: absolute;
   bottom: 30px;
+}
+
+@media screen and (max-height: 650px) {
+  .aside-menu__finch-logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .aside-menu__finch-logo {
+    display: none;
+  }
+
+  .aside-menu {
+    width: 50px;
+  }
+
+  .aside-menu__item {
+    height: 60px;
+  }
+
+  .aside-menu__item img {
+    width: 30px;
+  }
+
+  .aside-menu__item span {
+    display: none;
+  }
+
+  .aside-menu__divider {
+    width: 35px;
+  }
 }

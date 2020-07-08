@@ -24,6 +24,7 @@
   font-size: 14px;
   color: #8e879e;
   height: 20px;
+  height: 100%;
 }
 
 .header__title-price {
@@ -141,4 +142,34 @@
 .header__search-history:active,
 .header__input input:focus ~ .header__search-history {
   display: block;
+}
+
+@media screen and (max-width: 860px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .header__search {
+    width: 100%;
+  }
+
+  .header__back-button {
+    padding-left: 0;
+  }
+
+  .header__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .header__title {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header__subtitle {
+    text-align: center;
+  }
 }
