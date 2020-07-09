@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2020": true
+    "es2020": true,
+    "jest": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -28,6 +29,13 @@
       "files": ["src/i18n/messages/**/*.js"],
       "rules": {
         "max-len": "off"
+      }
+    },
+    {
+      "files": ["src/**/*.test.js"],
+      "rules": {
+        "max-len": "off",
+        "react/prop-types": "off"
       }
     }
   ]
