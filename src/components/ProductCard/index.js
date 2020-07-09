@@ -18,7 +18,7 @@ function ProductCard({ product }) {
         <div className="product-card__price-favorite">
           <div className="product-card__price">{currency(product.valor)}</div>
           <div className="product-card__favorite">
-            <Switch id={product.id} checked={product.favorite} />
+            <Switch id={product.id} />
           </div>
         </div>
         <div className="product-card__name-description">

@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 
 import './styles.css';
 import { Creators as ProductActions } from '../../store/ducks/products';
 
-function Switch({ id, checked }) {
+function Switch({ id }) {
   const dispatch = useDispatch();
+  const product = useSelector((state) => state.products.find((_product) => _product.id === id) || {});
 
   const handlerSwitchChange = () => {
     dispatch(ProductActions.toggleFavorite(id));
@@ -16,7 +17,13 @@ function Switch({ id, checked }) {
   return (
     <>
       <label htmlFor={id} className="switch__label">
-        <input id={id} type="checkbox" checked={checked} onChange={handlerSwitchChange} />
+        <input
+          id={id}
+          type="checkbox"
+          checked={product.favorite}
+          onChange={handlerSwitchChange}
+          data-testid="switch-input"
+        />
         <span className="switch__slider" />
       </label>
       <span className="switch__text">
@@ -28,12 +35,10 @@ function Switch({ id, checked }) {
 
 Switch.propTypes = {
   id: PropTypes.number,
-  checked: PropTypes.bool,
 };
 
 Switch.defaultProps = {
   id: Math.random(),
-  checked: false,
 };
 
 export default Switch;

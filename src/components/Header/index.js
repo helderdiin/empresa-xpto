@@ -32,7 +32,7 @@ function Header({ page, product, onSearch }) {
             {currency(product.valor)}
           </div>
           <div className="header__title-favorite">
-            <Switch id={product.id} checked={product.favorite} />
+            <Switch id={product.id} />
           </div>
         </div>
       );
@@ -90,7 +90,10 @@ function Header({ page, product, onSearch }) {
           )
           : ''}
         <div className="header__input">
-          <input placeholder={intl.formatMessage({ id: 'header.searchPlaceholder' })} onKeyPress={handlerKeyPressSearch} />
+          <input
+            placeholder={intl.formatMessage({ id: 'header.searchPlaceholder' })}
+            onKeyPress={handlerKeyPressSearch}
+          />
           <span className="header__icon">
             <FaSearch />
             <div />
