@@ -22,5 +22,13 @@
       "extensions": [".js", ".jsx"]
     }],
     "max-len": [1, 120]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/i18n/messages/**/*.js"],
+      "rules": {
+        "max-len": "off"
+      }
+    }
+  ]
 }

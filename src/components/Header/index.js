@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FaSearch, FaArrowLeft } from 'react-icons/fa';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import createPersistedState from 'use-persisted-state';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 import './styles.css';
 
@@ -15,6 +16,7 @@ const useSearchHistory = createPersistedState('@empresa-xpto/search-history');
 function Header({ page, product, onSearch }) {
   const [searchHistory, setSearchHistory] = useSearchHistory([]);
   const history = useHistory();
+  const intl = useIntl();
   const match = useRouteMatch({
     path: '/product/:productId',
   });
@@ -36,37 +38,15 @@ function Header({ page, product, onSearch }) {
       );
     }
 
-    if (page === PAGE_NAMES.EXCLUSIVE) {
-      return (
-        <div className="header__title">
-          <span>Empresa XPTO </span>
-          &nbsp;- Conheça nossos produtos exclusivos
-        </div>
-      );
-    }
-
-    if (page === PAGE_NAMES.PROMOTION) {
-      return (
-        <div className="header__title">
-          <span>Empresa XPTO </span>
-          &nbsp;- Conheça nossas promoções
-        </div>
-      );
-    }
-
-    if (page === PAGE_NAMES.FAVORITE) {
-      return (
-        <div className="header__title">
-          <span>Empresa XPTO </span>
-          &nbsp;- Meus Favoritos
-        </div>
-      );
-    }
-
     return (
       <div className="header__title">
-        <span>Empresa XPTO </span>
-        &nbsp;- Conheça todos os nossos produtos
+        <span>
+          <FormattedMessage id="header.title" />
+          {' '}
+        </span>
+        &nbsp;-
+        {' '}
+        <FormattedMessage id={`header.${page.toLowerCase()}.titleSuffix`} />
       </div>
     );
   };
@@ -76,19 +56,7 @@ function Header({ page, product, onSearch }) {
       return product.decricaoCurta;
     }
 
-    if (page === PAGE_NAMES.EXCLUSIVE) {
-      return 'Listagem de produtos exclusivos - clique no produto desejado para saber mais';
-    }
-
-    if (page === PAGE_NAMES.PROMOTION) {
-      return 'Listagem de produtos em promoção - clique no produto desejado para saber mais';
-    }
-
-    if (page === PAGE_NAMES.FAVORITE) {
-      return 'Listagem de produtos marcados como favoritos - clique no produto desejado para saber mais';
-    }
-
-    return 'Listagem de produtos - clique no produto desejado para saber mais';
+    return intl.formatMessage({ id: `header.${page.toLowerCase()}.subtitle` });
   };
 
   const handlerKeyPressSearch = (e) => {
@@ -122,7 +90,7 @@ function Header({ page, product, onSearch }) {
           )
           : ''}
         <div className="header__input">
-          <input placeholder="Buscar" onKeyPress={handlerKeyPressSearch} />
+          <input placeholder={intl.formatMessage({ id: 'header.searchPlaceholder' })} onKeyPress={handlerKeyPressSearch} />
           <span className="header__icon">
             <FaSearch />
             <div />

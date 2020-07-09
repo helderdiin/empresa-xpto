@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 
 import './styles.css';
 
@@ -30,7 +31,7 @@ function Product() {
         </div>
         <div className="product__props">
           <div className="product__props-title">
-            Ficha Técnica
+            <FormattedMessage id="product.propsTitle" />
           </div>
           <div className="product__props-items">
             <ul>
