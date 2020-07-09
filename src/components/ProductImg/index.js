@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './styles.css';
 
@@ -21,5 +22,16 @@ function ProductImg({ img, exclusive, promotion }) {
     </div>
   );
 }
+
+ProductImg.propTypes = {
+  img: PropTypes.string.isRequired,
+  exclusive: PropTypes.bool,
+  promotion: PropTypes.bool,
+};
+
+ProductImg.defaultProps = {
+  exclusive: false,
+  promotion: false,
+};
 
 export default ProductImg;
