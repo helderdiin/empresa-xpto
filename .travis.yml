@@ -7,6 +7,13 @@ script:
   - yarn test
 after_success:
   - yarn coveralls
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_KEY
+  app: exmpresa-xpto-test-env
+  on:
+    repo: helderdiin/empresa-xpto
 branches:
   only:
     - develop
