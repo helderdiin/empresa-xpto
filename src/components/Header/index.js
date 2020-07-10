@@ -111,9 +111,9 @@ function Header({ page, product, onSearch }) {
             ? (
               <div className="header__search-history">
                 <ul>
-                  {searchHistory.map((h, i) => (
+                  {searchHistory.map((_history, i) => (
                     // eslint-disable-next-line
-                    <li key={i}  onClick={() => { onSearch(h) }}><span>{h}</span></li>
+                    <li key={i}  onClick={() => { onSearch(_history) }}><span>{_history}</span></li>
                   ))}
                 </ul>
               </div>

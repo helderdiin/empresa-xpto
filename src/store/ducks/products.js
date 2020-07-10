@@ -8,12 +8,12 @@ const INITIAL_STATE = [];
 export default function products(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.LOAD:
-      return action.payload.productsList.map((p) => ({ ...p, favorite: false }));
+      return action.payload.productsList.map((product) => ({ ...product, favorite: false }));
     case Types.TOGGLE_FAVORITE:
       return state.map(
-        (p) => (p.id === action.payload.id
-          ? { ...p, favorite: !p.favorite }
-          : p),
+        (product) => (product.id === action.payload.id
+          ? { ...product, favorite: !product.favorite }
+          : product),
       );
     default:
       return state;

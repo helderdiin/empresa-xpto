@@ -20,20 +20,20 @@ function Products() {
 
     if (location.pathname === '/exclusive') {
       currentPage = PAGE_NAMES.EXCLUSIVE;
-      productsList = state.products.filter((p) => p.exclusivo);
+      productsList = state.products.filter((product) => product.exclusivo);
     }
 
     if (location.pathname === '/promotion') {
       currentPage = PAGE_NAMES.PROMOTION;
-      productsList = state.products.filter((p) => p.promocao);
+      productsList = state.products.filter((product) => product.promocao);
     }
 
     if (location.pathname === '/favorite') {
       currentPage = PAGE_NAMES.FAVORITE;
-      productsList = state.products.filter((p) => p.favorite);
+      productsList = state.products.filter((product) => product.favorite);
     }
 
-    return productsList.filter((p) => compareByQuery(p.nome, query) || compareByQuery(p.descricaoLonga, query));
+    return productsList.filter((product) => compareByQuery(product.nome, query) || compareByQuery(product.descricaoLonga, query));
   });
 
   return (
