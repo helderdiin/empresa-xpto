@@ -33,6 +33,7 @@ function Products() {
       productsList = state.products.filter((product) => product.favorite);
     }
 
+    /* eslint-disable-next-line */
     return productsList.filter((product) => compareByQuery(product.nome, query) || compareByQuery(product.descricaoLonga, query));
   });
 
