@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import './styles.css';
@@ -33,8 +33,9 @@ function Products() {
       productsList = state.products.filter((product) => product.favorite);
     }
 
-    /* eslint-disable-next-line */
-    return productsList.filter((product) => compareByQuery(product.nome, query) || compareByQuery(product.descricaoLonga, query));
+    return productsList.filter((product) => (
+      compareByQuery(product.nome, query) || compareByQuery(product.descricaoLonga, query)
+    ));
   });
 
   return (
@@ -42,9 +43,7 @@ function Products() {
       <Header page={currentPage} onSearch={setQuery} />
       <div className="page-container products">
         {products.map((product) => (
-          <Link key={product.id} to={`/product/${product.id}`} style={{ position: 'relative' }}>
-            <ProductCard product={product} />
-          </Link>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </>
