@@ -61,7 +61,14 @@ function Header({ page, product, onSearch }) {
 
   const handlerKeyPressSearch = (e) => {
     if (e.which === 13 || e.keyCode === 13) {
-      const element = e.target;
+      searchHistory(e);
+    }
+  };
+
+  const searchProduct = (e) => {
+    const element = e.target;
+
+    if (element.value) {
       onSearch(element.value);
 
       if (searchHistory.indexOf(element.value.toLowerCase()) === -1) {
@@ -93,6 +100,8 @@ function Header({ page, product, onSearch }) {
           <input
             placeholder={intl.formatMessage({ id: 'header.searchPlaceholder' })}
             onKeyPress={handlerKeyPressSearch}
+            onBlur={searchProduct}
+            data-testid="search-input"
           />
           <span className="header__icon">
             <FaSearch />
