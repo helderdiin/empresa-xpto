@@ -32,6 +32,7 @@
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
+    "styled-components": "^5.1.1",
     "use-persisted-state": "^0.3.0"
   },
   "devDependencies": {
