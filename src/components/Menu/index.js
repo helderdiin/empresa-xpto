@@ -2,7 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-import './styles.css';
+import {
+  Aside, Item, Divider, FinchLogo,
+} from './styles';
 
 import logoImg from '../../assets/logo.png';
 import productsImg from '../../assets/products.png';
@@ -15,56 +17,56 @@ function Menu() {
   const intl = useIntl();
 
   return (
-    <aside className="aside-menu">
-      <div className="aside-menu__item" style={{ opacity: 1 }}>
+    <Aside>
+      <Item opaticy={1}>
         <NavLink to="/" activeClassName="active">
           <img src={logoImg} alt={intl.formatMessage({ id: 'menu.logo' })} />
           <span />
         </NavLink>
-      </div>
+      </Item>
 
-      <div className="aside-menu__divider" />
+      <Divider />
 
       <NavLink to="/" exact activeClassName="active">
-        <div className="aside-menu__item">
+        <Item>
           <img src={productsImg} alt={intl.formatMessage({ id: 'menu.all' })} />
           <span><FormattedMessage id="menu.all" /></span>
-        </div>
+        </Item>
       </NavLink>
 
-      <div className="aside-menu__divider" />
+      <Divider />
 
       <NavLink to="/exclusive" activeClassName="active">
-        <div className="aside-menu__item">
+        <Item>
           <img src={exclusivesImg} alt={intl.formatMessage({ id: 'menu.exclusive' })} />
           <span><FormattedMessage id="menu.exclusive" /></span>
-        </div>
+        </Item>
       </NavLink>
 
-      <div className="aside-menu__divider" />
+      <Divider />
 
       <NavLink to="/promotion" activeClassName="active">
-        <div className="aside-menu__item">
+        <Item>
           <img src={promotionImg} alt={intl.formatMessage({ id: 'menu.promotion' })} />
           <span><FormattedMessage id="menu.promotion" /></span>
-        </div>
+        </Item>
       </NavLink>
 
-      <div className="aside-menu__divider" />
+      <Divider />
 
       <NavLink to="/favorite" activeClassName="active">
-        <div className="aside-menu__item">
+        <Item>
           <img src={favoritesImg} alt={intl.formatMessage({ id: 'menu.favorite' })} />
           <span><FormattedMessage id="menu.favorite" /></span>
-        </div>
+        </Item>
       </NavLink>
 
-      <div className="aside-menu__finch-logo">
+      <FinchLogo>
         <a href="http://www.finchsolucoes.com.br/" target="_blank" rel="noopener noreferrer">
           <img src={finchLogoImg} alt={intl.formatMessage({ id: 'menu.finchLogo' })} />
         </a>
-      </div>
-    </aside>
+      </FinchLogo>
+    </Aside>
   );
 }
 
