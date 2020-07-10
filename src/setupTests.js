@@ -1,7 +1,7 @@
 /* eslint-disable */
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import { render as rtlRender } from '@testing-library/react';
+import { render as rtlRender, cleanup } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import configureMockStore from 'redux-mock-store';
@@ -103,8 +103,12 @@ function render(
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });
 }
 
-// re-export everything
-export * from '@testing-library/react';
+afterEach(cleanup);
 
-// override render method
+test('Renderiza aplicação sem erros', () => {
+  const component = render();
+  expect(component).toBeDefined();
+});
+
+export * from '@testing-library/react';
 export { render };
