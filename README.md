@@ -61,5 +61,6 @@ yarn start
 
 * Criar botão para troca de linguagem
 * Paginação dos itens
+* Finalizar migração de **CSS** para **styled-components** no branch `css-in-js`
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
