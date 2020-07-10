@@ -50,17 +50,13 @@
   bottom: 30px;
 }
 
-@media screen and (max-height: 650px) {
+@media screen and (max-width: 550px), screen and (max-height: 650px) {
   .aside-menu__finch-logo {
     display: none;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .aside-menu__finch-logo {
-    display: none;
-  }
-
   .aside-menu {
     width: 50px;
   }
