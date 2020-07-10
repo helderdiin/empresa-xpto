@@ -1,25 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { IntlProvider } from 'react-intl';
+
+import './global.css';
+
+import Routes from './routes';
+import store from './store';
+import messages from './i18n';
+
+import Menu from './components/Menu';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <IntlProvider locale="pt-BR" messages={messages['pt-BR']}>
+        <BrowserRouter>
+          <Menu />
+
+          <div id="app">
+            <main>
+              <Routes />
+            </main>
+          </div>
+        </BrowserRouter>
+      </IntlProvider>
+    </Provider>
   );
 }
 

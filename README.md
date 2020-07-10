@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Empresa XPTO
 
-## Available Scripts
+[![Build Status](https://travis-ci.org/helderdiin/empresa-xpto.svg?branch=develop)](https://travis-ci.org/helderdiin/empresa-xpto)
+[![Coverage Status](https://coveralls.io/repos/github/helderdiin/empresa-xpto/badge.svg?branch=develop)](https://coveralls.io/github/helderdiin/empresa-xpto?branch=develop)
+[![Built With %E2%9D%A4](https://img.shields.io/badge/built%20with-%E2%9D%A4-red.svg)](https://github.com/helderdiin/empresa-xpto)
 
-In the project directory, you can run:
+> Implementar uma aplicação para gerenciar os produtos da empresa XPTO.
 
-### `yarn start`
+[Demo da aplicação](https://exmpresa-xpto-test-env.herokuapp.com/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Observações :green_book:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Ícones do menu
 
-### `yarn test`
+No menu, ao invés de importar 2 png's para cada item do menu (normal e ativado), decidi resolver desta forma:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+``` css
+.aside-menu__item {
+  /* ... */
+  opacity: 0.7;
+}
 
-### `yarn build`
+.aside-menu a.active .aside-menu__item {
+  opacity: 1;
+}
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+.aside-menu a.active .aside-menu__item span {
+  font-weight: 700;
+  color: #000;
+}
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Assim fica com um efeito visual semelhante, com menos complexidade e sem o uso de JS na jogada.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### React Icons
 
-### `yarn eject`
+Sei que fugi um pouco do layout proposto em relação aos ícones de *lupa* e de *voltar*, mas quis aproveitar a oportunidade e utilizar.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Commits em inglês ou português? :thinking:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+É sempre uma pergunta pertinente. O que eu acredito é em *seguir padrões*, mais importante do que o certo e o errado (que nem sempre existe) o mais importante é que um padrão seja definido (seja sozinho, quando estiver *solo*, ou em time, quando tiverem em *party*) e seguido.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+É mais comum vermos projetos com commits em inglês, mas acho que isso se deve ao fato de um possível apoio internacional, que não é o meu caso. Logo estou fazendo os **commits em português** por ser nossa língua nativa.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Executando o projeto localmente :computer:
 
-## Learn More
+Costumo apenas utilizar `yarn` como **package manager**, por isso só versionei o `yarn.lock`, indico o uso do mesmo para evitarmos versões diferentes.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+``` bash
+yarn install
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Playlists de desenvolvimento :musical_note:
 
-### Code Splitting
+1. [Easy](https://open.spotify.com/playlist/5iSqs9BD6ivQEfA4mU839z?si=iICXv-VZT56HntcPHubHfQ)
+2. [LIU - MIX VERÃO INFINITO](https://youtu.be/-irwPju_STY)
+3. [Imagine Dragons Best Of](https://open.spotify.com/playlist/43mnKzy2LaOV1q6LhsJERY?si=xR_MvpQLQV6ZU0rti3jGDQ)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Pendências :warning:
 
-### Analyzing the Bundle Size
+* Criar botão para troca de linguagem
+* Paginação dos itens
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

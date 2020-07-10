@@ -1,0 +1,83 @@
+.aside-menu {
+  height: 100%;
+  width: 130px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 3px 50px #00000029;
+}
+
+.aside-menu__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-top: 15px;
+  width: 100%;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.aside-menu__item span {
+  font-size: 16px;
+  color: #7d7d7d;
+}
+
+.aside-menu a.active .aside-menu__item {
+  opacity: 1;
+}
+
+.aside-menu a.active .aside-menu__item span {
+  font-weight: 700;
+  color: #000;
+}
+
+.aside-menu__item img {
+  margin-bottom: 10px;
+}
+
+.aside-menu__divider {
+  border-top: 1px solid #ccc;
+  width: 104px;
+}
+
+.aside-menu__finch-logo {
+  position: absolute;
+  bottom: 30px;
+}
+
+@media screen and (max-height: 650px) {
+  .aside-menu__finch-logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .aside-menu__finch-logo {
+    display: none;
+  }
+
+  .aside-menu {
+    width: 50px;
+  }
+
+  .aside-menu__item {
+    height: 60px;
+  }
+
+  .aside-menu__item img {
+    width: 30px;
+  }
+
+  .aside-menu__item span {
+    display: none;
+  }
+
+  .aside-menu__divider {
+    width: 35px;
+  }
+}
