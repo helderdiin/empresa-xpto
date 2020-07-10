@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { FaSearch, FaArrowLeft } from 'react-icons/fa';
 import { useRouteMatch, useHistory } from 'react-router-dom';
@@ -17,6 +17,7 @@ function Header({ page, product, onSearch }) {
   const [searchHistory, setSearchHistory] = useSearchHistory([]);
   const history = useHistory();
   const intl = useIntl();
+  const searchInput = useRef(null);
   const match = useRouteMatch({
     path: '/product/:productId',
   });
@@ -59,24 +60,29 @@ function Header({ page, product, onSearch }) {
     return intl.formatMessage({ id: `header.${page.toLowerCase()}.subtitle` });
   };
 
-  const handlerKeyPressSearch = (e) => {
-    if (e.which === 13 || e.keyCode === 13) {
-      searchHistory(e);
-    }
-  };
-
   const searchProduct = (e) => {
     const element = e.target;
 
-    if (element.value) {
-      onSearch(element.value);
+    onSearch(element.value);
 
+    if (element.value) {
       if (searchHistory.indexOf(element.value.toLowerCase()) === -1) {
         setSearchHistory([...searchHistory, element.value.toLowerCase()]);
       }
-
-      element.blur();
     }
+
+    element.blur();
+  };
+
+  const handlerKeyPressSearch = (e) => {
+    if (e.which === 13 || e.keyCode === 13) {
+      searchProduct(e);
+    }
+  };
+
+  const handlerSearchHistoryClick = (searchValue) => {
+    onSearch(searchValue);
+    searchInput.current.value = searchValue;
   };
 
   return (
@@ -101,6 +107,7 @@ function Header({ page, product, onSearch }) {
             placeholder={intl.formatMessage({ id: 'header.searchPlaceholder' })}
             onKeyPress={handlerKeyPressSearch}
             onBlur={searchProduct}
+            ref={searchInput}
             data-testid="search-input"
           />
           <span className="header__icon">
@@ -113,7 +120,7 @@ function Header({ page, product, onSearch }) {
                 <ul>
                   {searchHistory.map((_history, i) => (
                     // eslint-disable-next-line
-                    <li key={i}  onClick={() => { onSearch(_history) }}><span>{_history}</span></li>
+                    <li key={i}  onClick={() => { handlerSearchHistoryClick(_history) }}><span>{_history}</span></li>
                   ))}
                 </ul>
               </div>
