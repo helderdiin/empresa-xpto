@@ -4,6 +4,7 @@
   border-radius: 3px;
   box-shadow: 0 10px 20px #16319b29;
   background: #fff;
+  cursor: pointer;
 }
 
 .product-card__img {
