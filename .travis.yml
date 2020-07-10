@@ -5,7 +5,6 @@ install:
   - yarn install
 script:
   - yarn test
-  - touch .env && echo "REACT_APP_API_URL=http://www.mocky.io/v2" >> .env
 after_success:
   - yarn coveralls
 deploy:
