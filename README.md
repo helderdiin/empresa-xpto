@@ -62,5 +62,7 @@ yarn start
 * Criar botão para troca de linguagem
 * Paginação dos itens
 * Finalizar migração de **CSS** para **styled-components** no branch `css-in-js`
+* Adicionar tratamento para quando não encontrar produtos
+* Melhorar performance utilizando [React.lazy](https://pt-br.reactjs.org/docs/code-splitting.html#reactlazy)
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
